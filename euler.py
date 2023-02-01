@@ -4,7 +4,17 @@ import matplotlib.pyplot as plt
 def flg(N,t):
     r = 3
     K = 1
-    return r*N*(1-(N/K))
+    return r*N(1-(N/K))
+
+#euler pour toujours
+def euler (y0, f, t):
+    N = len(t)
+    y = [0] * N
+    y[0] = y0
+    print(y)
+    for i in range(1, N):
+        y[i] = y[i-1] + (t[i]-t[i-1])*f(y[i-1], t[i-1])
+    return y
 
 def Euler(h, n, t0, y0, f):
 
